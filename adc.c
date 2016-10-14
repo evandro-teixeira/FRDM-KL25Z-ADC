@@ -7,7 +7,7 @@
 
 #include "adc.h"
 
-void adc_init(void)
+void adc_init(uint8_t res)
 {
 	// Enable clocks
 	SIM_SCGC6 |= SIM_SCGC6_ADC0_MASK;	// ADC 0 clock
@@ -15,7 +15,7 @@ void adc_init(void)
 	// Configure ADC
 	ADC0_CFG1 = 0; // Reset register
 
-	ADC0_CFG1 |= (ADC_CFG1_MODE(3)  |  	// 16 bits mode
+	ADC0_CFG1 |= (ADC_CFG1_MODE( res )  |  	// 16 bits mode
 				  ADC_CFG1_ADICLK(0)|	// Input Bus Clock (20-25 MHz out of reset (FEI mode))
 				  ADC_CFG1_ADIV(1)) ;	// Clock divide by 2 (10-12.5 MHz)
 

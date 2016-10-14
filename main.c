@@ -11,7 +11,7 @@ uint16_t adc = 0;
 int main(void)
 {
 
-	adc_init(); // Inicializa ADC
+	adc_init( _16BIT ); // Inicializa ADC
 	gpio_direction(PORT_B,18,OUTPUT,NO_PULL_RESISTOR); // Inicializa IO PTB18 - LED Vermelho
 	gpio_direction(PORT_B,19,OUTPUT,NO_PULL_RESISTOR); // Inicializa IO PTB19 - LED Verde
 

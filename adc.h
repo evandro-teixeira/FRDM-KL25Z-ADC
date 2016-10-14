@@ -25,7 +25,12 @@
 //#define ADC_12 	6	//  PTD5
 //#define ADC_13 	7	//  PTD6
 
-void adc_init(void);
+#define _8BIT  0
+#define _10BIT 1
+#define _12BIT 2
+#define _16BIT 3
+
+void adc_init(uint8_t res);
 uint16_t adc_read(uint16_t ch);
 
 //int adc_cal(void);
